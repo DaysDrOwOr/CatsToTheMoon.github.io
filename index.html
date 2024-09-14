@@ -9,6 +9,8 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            background: linear-gradient(to bottom, #000000, #4b0082); /* Degradado de negro a morado */
+            color: white; /* Texto en blanco para mejor contraste */
         }
         header {
             background-color: #333;
@@ -20,6 +22,8 @@
             width: 90%;
             margin: 0 auto;
             padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7); /* Fondo semi-transparente para el contenido */
+            border-radius: 10px;
         }
         .chapter-index {
             margin: 20px 0;
@@ -49,6 +53,7 @@
             padding: 10px;
             margin-bottom: 10px;
             border-radius: 5px;
+            color: black;
         }
         .comment-author {
             font-weight: bold;
@@ -61,6 +66,10 @@
             background-color: #f4f4f4;
             padding: 20px;
             border-radius: 5px;
+            color: black;
+        }
+        h2 {
+            color: #FFD700; /* Color dorado para los títulos */
         }
     </style>
 </head>
@@ -71,6 +80,12 @@
     </header>
 
     <div class="container">
+        <!-- Introducción -->
+        <section class="introduction">
+            <h2>Introducción</h2>
+            <p>Bienvenido a la increíble historia de "Cats to the Moon", una aventura única donde los gatos buscan alcanzar las estrellas. Sigue cada capítulo de esta emocionante travesía y acompaña a nuestros héroes felinos en su misión hacia la luna.</p>
+        </section>
+
         <!-- Índice de Capítulos -->
         <section class="chapter-index">
             <h2>Índice de Capítulos</h2>
@@ -89,47 +104,47 @@
         <section id="chapters">
             <div id="chapter1" class="chapter">
                 <h2>Capítulo 1: El comienzo</h2>
-                <img src="portada1.jpg" alt="Portada Capítulo 1">
+                <img src="images/portada1.jpg" alt="Portada Capítulo 1" width="1920" height="389">
                 <p>Contenido del Capítulo 1...</p>
             </div>
             <div id="chapter2" class="chapter">
                 <h2>Capítulo 2: La misión</h2>
-                <img src="portada2.jpg" alt="Portada Capítulo 2">
+                <img src="images/portada2.jpg" alt="Portada Capítulo 2" width="1920" height="389">
                 <p>Contenido del Capítulo 2...</p>
             </div>
             <div id="chapter3" class="chapter">
                 <h2>Capítulo 3: La travesía</h2>
-                <img src="portada3.jpg" alt="Portada Capítulo 3">
+                <img src="images/portada3.jpg" alt="Portada Capítulo 3" width="1920" height="389">
                 <p>Contenido del Capítulo 3...</p>
             </div>
             <div id="chapter4" class="chapter">
                 <h2>Capítulo 4: El desafío</h2>
-                <img src="portada4.jpg" alt="Portada Capítulo 4">
+                <img src="images/portada4.jpg" alt="Portada Capítulo 4" width="1920" height="389">
                 <p>Contenido del Capítulo 4...</p>
             </div>
             <div id="chapter5" class="chapter">
                 <h2>Capítulo 5: La luna</h2>
-                <img src="portada5.jpg" alt="Portada Capítulo 5">
+                <img src="images/portada5.jpg" alt="Portada Capítulo 5" width="1920" height="389">
                 <p>Contenido del Capítulo 5...</p>
             </div>
             <div id="chapter6" class="chapter">
                 <h2>Capítulo 6: El ascenso</h2>
-                <img src="portada6.jpg" alt="Portada Capítulo 6">
+                <img src="images/portada6.jpg" alt="Portada Capítulo 6" width="1920" height="389">
                 <p>Contenido del Capítulo 6...</p>
             </div>
             <div id="chapter7" class="chapter">
                 <h2>Capítulo 7: La caída</h2>
-                <img src="portada7.jpg" alt="Portada Capítulo 7">
+                <img src="images/portada7.jpg" alt="Portada Capítulo 7" width="1920" height="389">
                 <p>Contenido del Capítulo 7...</p>
             </div>
             <div id="chapter8" class="chapter">
                 <h2>Capítulo 8: La redención</h2>
-                <img src="portada8.jpg" alt="Portada Capítulo 8">
+                <img src="images/portada8.jpg" alt="Portada Capítulo 8" width="1920" height="389">
                 <p>Contenido del Capítulo 8...</p>
             </div>
             <div id="chapter9" class="chapter">
                 <h2>Capítulo 9: El final</h2>
-                <img src="portada9.jpg" alt="Portada Capítulo 9">
+                <img src="images/portada9.jpg" alt="Portada Capítulo 9" width="1920" height="389">
                 <p>Contenido del Capítulo 9...</p>
             </div>
         </section>
@@ -195,15 +210,15 @@
                 const querySnapshot = await getDocs(q);
                 querySnapshot.forEach((doc) => {
                     const data = doc.data();
-                    if (data && data.text && data.timestamp) {  // Chequeo para evitar undefined
-                        const commentElement = document.createElement('div');
-                        commentElement.className = 'comment';
-                        commentElement.innerHTML = `
-                            <p class="comment-author">Usuario Anónimo</p>
-                            <p class="comment-date">${new Date(data.timestamp.toMillis()).toLocaleDateString()}</p>
-                            <p>${data.text}</p>
+                    if (data.text) {
+                        const commentDiv = document.createElement('div');
+                        commentDiv.classList.add('comment');
+                        const date = data.timestamp.toDate().toLocaleString();
+                        commentDiv.innerHTML = `
+                            <div class="comment-text">${data.text}</div>
+                            <div class="comment-date">${date}</div>
                         `;
-                        commentsContainer.appendChild(commentElement);
+                        commentsContainer.appendChild(commentDiv);
                     }
                 });
             }
