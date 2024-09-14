@@ -3,267 +3,231 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CATS TO THE MOON - Novela</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>CATS TO THE MOON</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(black, purple);
-            color: #f5f5f5;
+            background: linear-gradient(to bottom, #000000, #4b0082); /* Degradado de negro a morado */
+            color: white; /* Texto en blanco para mejor contraste */
         }
         header {
-            background-color: #222;
-            color: #f5f5f5;
-            padding: 10px 0;
+            background-color: #333;
+            color: white;
+            padding: 15px;
             text-align: center;
         }
         .container {
-            width: 80%;
+            width: 90%;
             margin: 0 auto;
             padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7); /* Fondo semi-transparente para el contenido */
+            border-radius: 10px;
         }
-        .intro {
-            text-align: center;
-            margin-bottom: 30px;
-            font-size: 1.2rem;
+        .chapter-index {
+            margin: 20px 0;
+            padding: 10px;
         }
-        .index {
-            margin-bottom: 30px;
-        }
-        .index a {
+        .chapter-index a {
+            display: block;
+            padding: 8px;
+            background-color: #f4f4f4;
+            margin-bottom: 5px;
             text-decoration: none;
-            color: #f5f5f5;
-            font-size: 1.2rem;
+            color: #333;
         }
-        .index a:hover {
-            text-decoration: underline;
+        .chapter {
+            margin-bottom: 40px;
         }
-        .chapter-header {
-            font-size: 2rem;
-            margin: 30px 0 10px;
-            text-align: center;
-        }
-        .chapter-image {
+        .chapter img {
             width: 100%;
             max-width: 1920px;
-            height: 389px;
-            object-fit: cover;
-            display: block;
-            margin: 0 auto;
+            height: auto;
         }
-        .chapter-content {
-            margin-top: 20px;
-            line-height: 1.6;
-        }
-        .feedback-section {
-            margin-top: 40px;
-        }
-        .feedback-form, .comments-section {
-            margin-bottom: 20px;
-        }
-        .feedback-form input, .feedback-form textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-        .feedback-form button {
-            padding: 10px 20px;
-            border: none;
-            background-color: #333;
-            color: #f5f5f5;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        .feedback-form button:hover {
-            background-color: #555;
+        .feedback-section, .comments-section {
+            margin: 40px 0;
         }
         .comment {
+            background-color: #f4f4f4;
             padding: 10px;
-            border-bottom: 1px solid #ccc;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            color: black;
         }
-        .comment-text {
-            font-size: 1rem;
+        .comment-author {
+            font-weight: bold;
         }
         .comment-date {
-            font-size: 0.8rem;
-            color: #aaa;
+            font-size: 0.9em;
+            color: gray;
+        }
+        .form-container {
+            background-color: #f4f4f4;
+            padding: 20px;
+            border-radius: 5px;
+            color: black;
+        }
+        h2 {
+            color: #FFD700; /* Color dorado para los títulos */
         }
     </style>
 </head>
 <body>
+
     <header>
         <h1>CATS TO THE MOON</h1>
     </header>
+
     <div class="container">
-        <div class="intro">
-            <p>Bienvenido a "CATS TO THE MOON". Aquí podrás leer los capítulos de nuestra novela y dejar tu feedback. ¡Esperamos que disfrutes la lectura!</p>
-        </div>
-        <div class="index">
-            <h2>Índice</h2>
-            <ul>
-                <li><a href="#chapter1">Capítulo 1</a></li>
-                <li><a href="#chapter2">Capítulo 2</a></li>
-                <li><a href="#chapter3">Capítulo 3</a></li>
-                <li><a href="#chapter4">Capítulo 4</a></li>
-                <li><a href="#chapter5">Capítulo 5</a></li>
-                <li><a href="#chapter6">Capítulo 6</a></li>
-                <li><a href="#chapter7">Capítulo 7</a></li>
-                <li><a href="#chapter8">Capítulo 8</a></li>
-                <li><a href="#chapter9">Capítulo 9</a></li>
-            </ul>
-        </div>
+        <!-- Introducción -->
+        <section class="introduction">
+            <h2>Introducción</h2>
+            <p>Bienvenido a la increíble historia de "Cats to the Moon", una aventura única donde los gatos buscan alcanzar las estrellas. Sigue cada capítulo de esta emocionante travesía y acompaña a nuestros héroes felinos en su misión hacia la luna.</p>
+        </section>
 
-        <!-- Capítulo 1 -->
-        <div id="chapter1">
-            <h2 class="chapter-header">Capítulo 1</h2>
-            <img src="images/chapter1-cover.jpg" alt="Portada del Capítulo 1" class="chapter-image">
-            <div class="chapter-content">
-                <p>---------17:15</p>
-                <p>Mientras miro a la cúpula, esta vez iluminada de un precioso azul pastel, le doy una calada más a mi cigarro. Me acomodo en el banco de madera y el suave balanceo me relaja mientras el silencio de la tarde se me hace eco en los oídos. La gente pasa a mi lado con sus rutinas diarias, ajenos a mi meditación personal.</p>
-                <p>Vuelvo de sí y me encuentro sentado en un banco de madera, en medio de una gran plazoleta donde los niños juegan, la gente habla de sus quehaceres, y el precioso estilo vintage de las tiendas me hace pensar en el provivalente desarrollo de la sociedad.</p>
-                <p>(Frunzo el ceño y pienso)</p>
-                <p>Un desarrollo bastante desigual.</p>
-                <p>(Le doy una calada más a mi cigarro y suspiro, acomodándome en el banco y subiendo un poco la cabeza)</p>
-                <p>La gente que tiene negocios, se aferra a sus socios y los demás nacieron con el privilegio, luego solo queda rechazo.</p>
-                <p>(Me reclino hacia delante apoyándome con mis codos en mis piernas, y doy dos caladas rápidas)</p>
-                <p>En ese pequeño grupo social estoy yo.</p>
-                <p>Hijo único de una familia pobre, con 21 años y desempleado.</p>
-                <p>Desempleado porque no tengo algo que me haga especial, para haber podido reclamar mi pequeño espacio en la sociedad debería tener un don y un propósito, si no, entonces no tiene sentido que siguiera aquí.</p>
-                <p>(Le doy las últimas caladas al cigarro antes de tirarlo)</p>
-                <p>(Me levanto de forma desperezada y lo piso contra el suelo, acto seguido camino a casa)</p>
-                <p>Esto se repetía diariamente, me sentaba en aquella plazoleta y fumaba.</p>
-                <p>Hasta que un día tuve suficiente y decidí tomar una decisión...</p>
-                <p>La peor decisión que tomé nunca...</p>
-                <p>....</p>
-                <p>-------------Mayo de 1979</p>
-                <p>Caía la medianoche.</p>
-                <p>Me apoyaba en una farola cuya ubicación estaba al lado de una tienda de comestibles.</p>
-                <p>Cuando el brillo de la cúpula se desvaneció, dio el paso a un precioso color púrpura, cuyo sentimiento me murmuraba que ya era hora de actuar.</p>
-                <p>Revisé mis bolsillos otra vez para palpar la navaja de mano que llevaba encima de la americana.</p>
-                <p>Ya sentía que el corazón me iba a mil.</p>
-                <p>Iba a entrar...</p>
-                <p>Llené mis pulmones de lo que parecía ser 'aire' y entré como una bala.</p>
-                <p>- ¡TODOS FUERA!</p>
-                <p>Había una pareja que me miró perpleja.</p>
-                <p>- ¡HE DICHO QUE A TOMAR POR CULO!</p>
-                <p>Rápidamente huyeron los dos.</p>
-                <p>(Saqué la navaja y me acerqué al mostrador)</p>
-                <p>- ¡Si quieres seguir respirando abre la puta caja!</p>
-                <p>El hombre de detrás rápidamente con sus sudorosos dedos tecleó un código en la caja.</p>
-                <p>¡Tchank!</p>
-                <p>Estaba abierta.</p>
-                <p>- ¡Rápido joder!</p>
-                <p>(Agarré todo el dinero que tenía a mano y me lo escondí en los bolsillos)</p>
-                <p>Cuando de pronto...</p>
-                <p>Un sonido horroroso deja seco mis tímpanos.</p>
-                <p>- ¡Raahh!</p>
-                <p>Era la alarma de seguridad.</p>
-                <p>Estaba hecha específicamente para incapacitarnos a través de nuestro oído.</p>
-                <p>Salí rápidamente de la tienda casi reventando la puerta de cristal en el proceso.</p>
-                <p>Corrí como una bala perdida hasta el primer callejón que había y desaparecí entre la sombra.</p>
-                <p>Y ya no hubo redención posible de tal atrocidad.</p>
-                <p>Solo era una cuestión de dinero.</p>
-                <p>A los pocos días se me ocurrió cambiar de aspecto por no ser reconocido.</p>
-                <p>De todas maneras, no era para nada un problema, sino el que era a partir de la nueva elección que tomé en mi vida.</p>
-                <p>Y el destino me arrastró al abismo.</p>
+        <!-- Índice de Capítulos -->
+        <section class="chapter-index">
+            <h2>Índice de Capítulos</h2>
+            <a href="#chapter1">Capítulo 1</a>
+            <a href="#chapter2">Capítulo 2</a>
+            <a href="#chapter3">Capítulo 3</a>
+            <a href="#chapter4">Capítulo 4</a>
+            <a href="#chapter5">Capítulo 5</a>
+            <a href="#chapter6">Capítulo 6</a>
+            <a href="#chapter7">Capítulo 7</a>
+            <a href="#chapter8">Capítulo 8</a>
+            <a href="#chapter9">Capítulo 9</a>
+        </section>
+
+        <!-- Capítulos -->
+        <section id="chapters">
+            <div id="chapter1" class="chapter">
+                <h2>Capítulo 1: El comienzo</h2>
+                <img src="images/portada1.jpg" alt="Portada Capítulo 1" width="1920" height="389">
+                <p>Contenido del Capítulo 1...</p>
             </div>
-        </div>
-
-        <!-- Capítulo 2 -->
-        <div id="chapter2">
-            <h2 class="chapter-header">Capítulo 2 - Trapos Sucios</h2>
-            <img src="images/chapter2-cover.jpg" alt="Portada del Capítulo 2" class="chapter-image">
-            <div class="chapter-content">
-                <p>El diario matutino se había vuelto parte de la rutina diaria de todos los habitantes de New Holland. En las primeras horas del día, la mayoría se encontraba en cafeterías, leyendo los titulares y preparándose para enfrentar el día. Era un ritual que parecía inamovible.</p>
-                <p>En una pequeña cafetería del centro, dos personas charlaban animadamente mientras disfrutaban de sus bebidas. La conversación giraba en torno a un robo reciente que había sacudido la ciudad. Nadie parecía tener información precisa, pero todos estaban de acuerdo en que el incidente era preocupante.</p>
-                <p>“¿Te has enterado de lo que ha pasado en la calle Maple?”</p>
-                <p>“Sí, dicen que entraron en la casa de la señora Johnson y se llevaron casi todo lo que había. La policía todavía está investigando, pero parece que fue bastante violento.”</p>
-                <p>“¿Y qué hay del segundo robo? Dicen que es parte de un plan más grande.”</p>
-                <p>“Eso he oído también. La gente está realmente asustada. No se siente segura en ningún lugar ahora.”</p>
-                <p>Mientras el par de amigos hablaba sobre el robo, la tensión en el ambiente era palpable. Los rumores y las especulaciones eran la norma, y la comunidad intentaba entender la gravedad de la situación.</p>
-                <p>A medida que el día avanzaba, el ambiente en la ciudad se volvía cada vez más tenso. La seguridad se había convertido en un tema candente, y todos esperaban ansiosos cualquier noticia que pudiera aclarar la situación.</p>
+            <div id="chapter2" class="chapter">
+                <h2>Capítulo 2: La misión</h2>
+                <img src="images/portada2.jpg" alt="Portada Capítulo 2" width="1920" height="389">
+                <p>Contenido del Capítulo 2...</p>
             </div>
-        </div>
-
-        <!-- Capítulo 3 -->
-        <div id="chapter3">
-            <h2 class="chapter-header">Capítulo 3 - Bala Perdida</h2>
-            <img src="images/chapter3-cover.jpg" alt="Portada del Capítulo 3" class="chapter-image">
-            <div class="chapter-content">
-                <p>Era la noche del 7 de junio de 1979. La fábrica se había convertido en un lugar lleno de tensiones y peligros. La operación estaba en marcha, y los personajes principales se enfrentaban a una serie de desafíos.</p>
-                <p>En una esquina oscura de la fábrica, un francotirador acechaba. Su presencia era inquietante, y el peligro parecía inminente. A lo lejos, una mendiga se encontraba en una posición vulnerable, y los protagonistas sabían que debían actuar con rapidez.</p>
-                <p>La búsqueda de documentos valiosos había llevado a los personajes a una serie de eventos tensionantes. Cada paso estaba cargado de riesgo, y el tiempo se había convertido en un enemigo implacable.</p>
-                <p>La tensión creció a medida que se acercaban a la sala donde se encontraban los documentos. La operación estaba a punto de culminar, pero la amenaza del francotirador seguía presente. Cada movimiento debía ser calculado con precisión, y el peligro se hacía más palpable.</p>
-                <p>La confrontación final fue intensa. La batalla contra el francotirador y el escape de la fábrica pusieron a prueba la determinación de los protagonistas. La fuga se convirtió en una carrera contra el tiempo, y la desesperación se hacía más intensa.</p>
-                <p>Finalmente, la operación llegó a su fin, pero el precio que tuvieron que pagar fue alto. La pérdida de un compañero y la herida en el hombro de Kick marcaron el cierre de una noche llena de desafíos y sacrificios.</p>
+            <div id="chapter3" class="chapter">
+                <h2>Capítulo 3: La travesía</h2>
+                <img src="images/portada3.jpg" alt="Portada Capítulo 3" width="1920" height="389">
+                <p>Contenido del Capítulo 3...</p>
             </div>
-        </div>
-
-        <!-- Capítulo 4 -->
-        <div id="chapter4">
-            <h2 class="chapter-header">Capítulo 4 - Post Mortem</h2>
-            <img src="images/chapter4-cover.jpg" alt="Portada del Capítulo 4" class="chapter-image">
-            <div class="chapter-content">
-                <p>Kick se despertó en una habitación de motel, el ambiente estaba cargado de una sensación de derrota. Las sombras de los recuerdos lo envolvían mientras reflexionaba sobre su reciente experiencia. Cada rincón de la habitación parecía estar impregnado de las emociones que había vivido.</p>
-                <p>En un bar cercano, Kick se encontró con Tom. La conversación reveló aspectos personales y profundos de su vida. La introspección de Kick se vio intensificada por un sueño perturbador que lo llevó a cuestionar sus decisiones y su propósito.</p>
-                <p>El encuentro con Tom fue un momento de conexión emocional. A pesar de las dificultades, Tom le brindó el apoyo que Kick necesitaba para enfrentar sus demonios internos. La amistad y el entendimiento se convirtieron en una fuente de consuelo en medio de la tormenta.</p>
-                <p>El capítulo cerró con una escena conmovedora en la que Whisky ofreció apoyo emocional a Kick. La experiencia había dejado una marca profunda en él, pero la presencia de sus amigos le ofreció una luz en la oscuridad.</p>
+            <div id="chapter4" class="chapter">
+                <h2>Capítulo 4: El desafío</h2>
+                <img src="images/portada4.jpg" alt="Portada Capítulo 4" width="1920" height="389">
+                <p>Contenido del Capítulo 4...</p>
             </div>
-        </div>
-
-        <!-- Capítulo 5 -->
-        <div id="chapter5">
-            <h2 class="chapter-header">Capítulo 5 - Raíces</h2>
-            <img src="images/chapter5-cover.jpg" alt="Portada del Capítulo 5" class="chapter-image">
-            <div class="chapter-content">
-                <p>Petra se encontraba en un momento de reflexión mientras descansaba en una hamaca en el jardín de su hogar. El ambiente tranquilo contrastaba con las dificultades que enfrentaba. La conversación con sus hermanos menores y el incidente con Tom fueron parte de una serie de eventos que marcaron su día.</p>
-                <p>Tom llegó a la casa con una botella de licor, y su presencia generó una conversación cargada de tensión. Petra se enfrentaba a problemas económicos y la responsabilidad de cuidar a su madre enferma. La oferta de Tom para participar en un nuevo plan relacionado con los robos ofreció una posible salida a su crisis.</p>
-                <p>El capítulo exploró temas de familia, dificultades económicas y la posibilidad de encontrar una solución a través de nuevas oportunidades. Petra se encontró en una encrucijada, y el futuro parecía incierto.</p>
+            <div id="chapter5" class="chapter">
+                <h2>Capítulo 5: La luna</h2>
+                <img src="images/portada5.jpg" alt="Portada Capítulo 5" width="1920" height="389">
+                <p>Contenido del Capítulo 5...</p>
             </div>
-        </div>
-
-        <!-- Capítulo 6 -->
-        <div id="chapter6">
-            <h2 class="chapter-header">Capítulo 6 - Reflexión</h2>
-            <img src="images/chapter6-cover.jpg" alt="Portada del Capítulo 6" class="chapter-image">
-            <div class="chapter-content">
-                <p>Kick vagaba por la ciudad, sumido en una profunda reflexión sobre su vida. La pérdida de un sobre importante en un bar se convirtió en el punto de partida para una serie de eventos que lo llevaron a encontrarse con una misteriosa cantante llamada Six.</p>
-                <p>Six le ofreció una oportunidad para recuperar el dinero perdido a cambio de realizar un trabajo. La oferta estaba envuelta en misterio, y Kick se encontró en una encrucijada, preguntándose si debía aceptar la oferta y qué consecuencias podría tener para su vida.</p>
-                <p>La promesa de una nueva oportunidad le ofreció un rayo de esperanza en medio de su desolación. Sin embargo, la decisión no fue fácil, y Kick se vio atrapado en una red de incertidumbre y conflicto interno.</p>
+            <div id="chapter6" class="chapter">
+                <h2>Capítulo 6: El ascenso</h2>
+                <img src="images/portada6.jpg" alt="Portada Capítulo 6" width="1920" height="389">
+                <p>Contenido del Capítulo 6...</p>
             </div>
-        </div>
-
-        <!-- Capítulo 7 -->
-        <div id="chapter7">
-            <h2 class="chapter-header">Capítulo 7 - El Principio del Fin</h2>
-            <img src="images/chapter7-cover.jpg" alt="Portada del Capítulo 7" class="chapter-image">
-            <div class="chapter-content">
-                <p>Kick se encontraba en plena huida, buscando refugio mientras lidia con una herida en el hombro y la pérdida de un compañero. La búsqueda de un lugar seguro lo llevó a una cabaña abandonada, un refugio temporal en medio del caos.</p>
-                <p>En la cabaña, Kick descubrió los trágicos restos de una familia que había sido víctima de una tragedia. La escena, cargada de dolor y sacrificio, le hizo reflexionar sobre su propia vida y las decisiones que había tomado.</p>
-                <p>Entre los restos, encontró una nota que hablaba del sacrificio de la madre de la familia y el amor que aún permanecía a pesar de la pérdida. El hallazgo le dejó una profunda impresión y reforzó su determinación de enfrentar los desafíos que le esperaban.</p>
-                <p>Con el corazón pesado, Kick se preparó para regresar al fuego que ardía a lo lejos, sabiendo que el final de su viaje estaba cerca y que debía enfrentar lo que le esperaba con valentía.</p>
+            <div id="chapter7" class="chapter">
+                <h2>Capítulo 7: La caída</h2>
+                <img src="images/portada7.jpg" alt="Portada Capítulo 7" width="1920" height="389">
+                <p>Contenido del Capítulo 7...</p>
             </div>
-        </div>
+            <div id="chapter8" class="chapter">
+                <h2>Capítulo 8: La redención</h2>
+                <img src="images/portada8.jpg" alt="Portada Capítulo 8" width="1920" height="389">
+                <p>Contenido del Capítulo 8...</p>
+            </div>
+            <div id="chapter9" class="chapter">
+                <h2>Capítulo 9: El final</h2>
+                <img src="images/portada9.jpg" alt="Portada Capítulo 9" width="1920" height="389">
+                <p>Contenido del Capítulo 9...</p>
+            </div>
+        </section>
 
-        <!-- Feedback -->
-        <div class="feedback-section">
+        <!-- Sección de Feedback -->
+        <section class="feedback-section">
             <h2>Deja tu Feedback</h2>
-            <form id="feedback-form" action="https://formspree.io/f/xyzgadzz" method="POST" class="feedback-form">
-                <input type="text" name="name" placeholder="Tu nombre" required>
-                <input type="email" name="email" placeholder="Tu correo electrónico" required>
-                <textarea name="message" rows="5" placeholder="Tu comentario" required></textarea>
-                <button type="submit">Enviar</button>
-            </form>
-            <div class="comments-section">
-                <!-- Aquí se mostrarán los comentarios -->
+            <div class="form-container">
+                <form id="feedbackForm">
+                    <label for="feedbackInput">Tu comentario:</label>
+                    <textarea id="feedbackInput" rows="4" required></textarea>
+                    <button type="submit">Enviar Feedback</button>
+                </form>
             </div>
-        </div>
+        </section>
+
+        <!-- Sección de Comentarios -->
+        <section class="comments-section">
+            <h2>Comentarios</h2>
+            <div id="commentsContainer"></div>
+        </section>
+
     </div>
+
+    <!-- Firebase SDKs -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-analytics.js";
+        import { getFirestore, collection, addDoc, getDocs, orderBy, query, serverTimestamp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyDTzN6U7AHHjCUwK3eyRXSWWLWE3n15Ge0",
+            authDomain: "cttm-feedback-and-comments.firebaseapp.com",
+            projectId: "cttm-feedback-and-comments",
+            storageBucket: "cttm-feedback-and-comments.appspot.com",
+            messagingSenderId: "266179901021",
+            appId: "1:266179901021:web:6a97a958faefa47459ffb4",
+            measurementId: "G-6Q2XL76G8B"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+        const db = getFirestore(app);
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('feedbackForm').addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const feedback = document.getElementById('feedbackInput').value;
+                if (feedback.trim() !== '') {
+                    await addDoc(collection(db, 'comments'), {
+                        text: feedback,
+                        timestamp: serverTimestamp()
+                    });
+                    document.getElementById('feedbackInput').value = '';
+                    loadComments();
+                }
+            });
+
+            async function loadComments() {
+                const commentsContainer = document.getElementById('commentsContainer');
+                commentsContainer.innerHTML = '';
+                const q = query(collection(db, 'comments'), orderBy('timestamp', 'desc'));
+                const querySnapshot = await getDocs(q);
+                querySnapshot.forEach((doc) => {
+                    const data = doc.data();
+                    if (data.text) {
+                        const commentDiv = document.createElement('div');
+                        commentDiv.classList.add('comment');
+                        const date = data.timestamp.toDate().toLocaleString();
+                        commentDiv.innerHTML = `
+                            <div class="comment-text">${data.text}</div>
+                            <div class="comment-date">${date}</div>
+                        `;
+                        commentsContainer.appendChild(commentDiv);
+                    }
+                });
+            }
+
+            loadComments();
+        });
+    </script>
 </body>
 </html>
+
 
 
