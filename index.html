@@ -104,48 +104,47 @@
         <section id="chapters">
             <div id="chapter1" class="chapter">
                 <h2>Capítulo 1: El comienzo</h2>
-                <img src="portada1.jpg" alt="Portada Capítulo 1">
+                <img src="images/portada1.jpg" alt="Portada Capítulo 1" width="1920" height="389">
                 <p>Contenido del Capítulo 1...</p>
             </div>
             <div id="chapter2" class="chapter">
                 <h2>Capítulo 2: La misión</h2>
-                <img src="portada2.jpg" alt="Portada Capítulo 2">
+                <img src="images/portada2.jpg" alt="Portada Capítulo 2" width="1920" height="389">
                 <p>Contenido del Capítulo 2...</p>
             </div>
-            <!-- Capítulos del 3 al 9 -->
             <div id="chapter3" class="chapter">
                 <h2>Capítulo 3: La travesía</h2>
-                <img src="portada3.jpg" alt="Portada Capítulo 3">
+                <img src="images/portada3.jpg" alt="Portada Capítulo 3" width="1920" height="389">
                 <p>Contenido del Capítulo 3...</p>
             </div>
             <div id="chapter4" class="chapter">
                 <h2>Capítulo 4: El desafío</h2>
-                <img src="portada4.jpg" alt="Portada Capítulo 4">
+                <img src="images/portada4.jpg" alt="Portada Capítulo 4" width="1920" height="389">
                 <p>Contenido del Capítulo 4...</p>
             </div>
             <div id="chapter5" class="chapter">
                 <h2>Capítulo 5: La luna</h2>
-                <img src="portada5.jpg" alt="Portada Capítulo 5">
+                <img src="images/portada5.jpg" alt="Portada Capítulo 5" width="1920" height="389">
                 <p>Contenido del Capítulo 5...</p>
             </div>
             <div id="chapter6" class="chapter">
                 <h2>Capítulo 6: El ascenso</h2>
-                <img src="portada6.jpg" alt="Portada Capítulo 6">
+                <img src="images/portada6.jpg" alt="Portada Capítulo 6" width="1920" height="389">
                 <p>Contenido del Capítulo 6...</p>
             </div>
             <div id="chapter7" class="chapter">
                 <h2>Capítulo 7: La caída</h2>
-                <img src="portada7.jpg" alt="Portada Capítulo 7">
+                <img src="images/portada7.jpg" alt="Portada Capítulo 7" width="1920" height="389">
                 <p>Contenido del Capítulo 7...</p>
             </div>
             <div id="chapter8" class="chapter">
                 <h2>Capítulo 8: La redención</h2>
-                <img src="portada8.jpg" alt="Portada Capítulo 8">
+                <img src="images/portada8.jpg" alt="Portada Capítulo 8" width="1920" height="389">
                 <p>Contenido del Capítulo 8...</p>
             </div>
             <div id="chapter9" class="chapter">
                 <h2>Capítulo 9: El final</h2>
-                <img src="portada9.jpg" alt="Portada Capítulo 9">
+                <img src="images/portada9.jpg" alt="Portada Capítulo 9" width="1920" height="389">
                 <p>Contenido del Capítulo 9...</p>
             </div>
         </section>
@@ -211,7 +210,7 @@
                 const querySnapshot = await getDocs(q);
                 querySnapshot.forEach((doc) => {
                     const data = doc.data();
-                    if (data && data.text && data.timestamp) {  // Chequeo para evitar undefined
+                    if (data.text) {
                         const commentDiv = document.createElement('div');
                         commentDiv.classList.add('comment');
                         const date = data.timestamp.toDate().toLocaleString();
