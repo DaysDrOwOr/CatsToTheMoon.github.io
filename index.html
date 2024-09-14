@@ -7,291 +7,142 @@
     <meta name="author" content="Tu Nombre">
     <title>Mi Novela</title>
     <style>
-        body {
-            font-family: 'Georgia', serif;
-            background-color: #f5f5f5;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            width: 85%;
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-        }
-        header {
-            text-align: center;
-            padding: 40px 0;
-            background-color: #333;
-            color: white;
-        }
-        header h1 {
-            font-size: 3em;
-            font-family: 'Times New Roman', serif;
-            margin: 0;
-        }
-        nav {
-            margin: 20px 0;
-            text-align: center;
-        }
-        nav a {
-            margin: 0 15px;
-            font-size: 1.2em;
-            color: #333;
-            text-decoration: none;
-        }
-        nav a:hover {
-            text-decoration: underline;
-        }
-        section {
-            margin-top: 40px;
-        }
-        h2 {
-            font-size: 2em;
-            color: #444;
-            border-bottom: 2px solid #ddd;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-        .chapter-content {
-            font-size: 1.2em;
-            line-height: 1.8em;
-            color: #333;
-            text-align: justify;
-        }
-        .image-container {
-            text-align: center;
-            margin: 20px 0;
-        }
-        .image-container img {
-            width: 100%; /* Asegura que la imagen ocupe todo el ancho del contenedor */
-            max-width: 1920px;
-            height: auto;
-            aspect-ratio: 1920 / 389; /* Mantiene la proporción exacta */
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-        footer {
-            text-align: center;
-            margin-top: 50px;
-            padding: 20px 0;
-            background-color: #333;
-            color: white;
-            font-size: 0.9em;
-            border-radius: 0 0 8px 8px;
-        }
-        .feedback-section {
-            margin-top: 50px;
-            padding: 30px;
-            background-color: #eee;
-            border-radius: 8px;
-        }
-        .feedback-section h3 {
-            margin-bottom: 20px;
-            color: #444;
-            font-size: 1.5em;
-        }
-        .feedback-section form {
-            display: flex;
-            flex-direction: column;
-        }
-        .feedback-section form textarea {
-            padding: 10px;
-            margin-bottom: 15px;
-            font-size: 1em;
-            border-radius: 8px;
-            border: 1px solid #ccc;
-            resize: vertical;
-        }
-        .feedback-section form input[type="submit"] {
-            background-color: #333;
-            color: white;
-            padding: 10px;
-            font-size: 1.1em;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-        }
-        .feedback-section form input[type="submit"]:hover {
-            background-color: #555;
-        }
-        .comment-section {
-            margin-top: 40px;
-        }
-        .comment-section h4 {
-            margin-bottom: 20px;
-            color: #333;
-            font-size: 1.3em;
-        }
-        .comment {
-            background-color: #f9f9f9;
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 15px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        .comment-author {
-            font-weight: bold;
-        }
-        .comment-date {
-            font-size: 0.9em;
-            color: #777;
-        }
+        body { font-family: Arial, sans-serif; background-color: #f0f0f0; color: #333; }
+        header { background-color: #333; color: #fff; padding: 10px; text-align: center; }
+        .container { max-width: 800px; margin: 0 auto; padding: 20px; background-color: #fff; }
+        .image-container img { width: 100%; height: auto; max-width: 1920px; max-height: 389px; }
+        .chapters { margin-top: 20px; }
+        .chapters a { display: block; margin: 10px 0; text-decoration: none; color: #333; font-weight: bold; }
+        .feedback-section, .comment-section { margin-top: 30px; }
+        textarea { width: 100%; padding: 10px; margin-bottom: 10px; }
+        input[type="submit"] { padding: 10px 15px; background-color: #333; color: #fff; border: none; cursor: pointer; }
+        .comment { background-color: #f9f9f9; padding: 15px; margin-bottom: 10px; border-radius: 5px; }
+        .comment-author { font-weight: bold; }
+        .comment-date { font-size: 0.8em; color: #666; }
+        .editor-publications { margin-top: 30px; }
     </style>
+    <!-- Importa Firebase SDKs -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-analytics.js";
+        import { getFirestore, collection, addDoc, getDocs, orderBy, query, serverTimestamp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyDTzN6U7AHHjCUwK3eyRXSWWLWE3n15Ge0",
+            authDomain: "cttm-feedback-and-comments.firebaseapp.com",
+            projectId: "cttm-feedback-and-comments",
+            storageBucket: "cttm-feedback-and-comments.appspot.com",
+            messagingSenderId: "266179901021",
+            appId: "1:266179901021:web:6a97a958faefa47459ffb4",
+            measurementId: "G-6Q2XL76G8B"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+        const db = getFirestore(app);
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('feedbackForm').addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const feedback = document.getElementById('feedbackInput').value;
+                if (feedback.trim() !== '') {
+                    await addDoc(collection(db, 'comments'), {
+                        text: feedback,
+                        timestamp: serverTimestamp()
+                    });
+                    document.getElementById('feedbackInput').value = '';
+                    loadComments();
+                }
+            });
+
+            async function loadComments() {
+                const commentsContainer = document.getElementById('commentsContainer');
+                commentsContainer.innerHTML = '';
+                const q = query(collection(db, 'comments'), orderBy('timestamp', 'desc'));
+                const querySnapshot = await getDocs(q);
+                querySnapshot.forEach((doc) => {
+                    const data = doc.data();
+                    const commentElement = document.createElement('div');
+                    commentElement.className = 'comment';
+                    commentElement.innerHTML = `
+                        <p class="comment-author">Usuario Anónimo</p>
+                        <p class="comment-date">${new Date(data.timestamp.toMillis()).toLocaleDateString()}</p>
+                        <p>${data.text}</p>
+                    `;
+                    commentsContainer.appendChild(commentElement);
+                });
+            }
+
+            loadComments();
+        });
+    </script>
 </head>
 <body>
+    <header>
+        <h1>Mi Novela</h1>
+    </header>
+
     <div class="container">
-        <!-- Header principal -->
-        <header>
-            <h1>Mi Novela: CATS TO THE MOON</h1>
-            <p>Autor: <strong>Tu Nombre</strong></p>
-        </header>
-
         <!-- Índice de capítulos -->
-        <nav>
-            <a href="#capitulo1">Capítulo 1</a>
-            <a href="#capitulo2">Capítulo 2</a>
-            <a href="#capitulo3">Capítulo 3</a>
-            <a href="#capitulo4">Capítulo 4</a>
-            <a href="#capitulo5">Capítulo 5</a>
-            <a href="#capitulo6">Capítulo 6</a>
-            <a href="#capitulo7">Capítulo 7</a>
-            <a href="#capitulo8">Capítulo 8</a>
-            <a href="#capitulo9">Capítulo 9</a>
-        </nav>
+        <section class="chapters">
+            <h2>Índice de Capítulos</h2>
+            <a href="#capitulo1">Capítulo 1: Título del Capítulo 1</a>
+            <a href="#capitulo2">Capítulo 2: Título del Capítulo 2</a>
+            <a href="#capitulo3">Capítulo 3: Título del Capítulo 3</a>
+            <a href="#capitulo4">Capítulo 4: Título del Capítulo 4</a>
+            <a href="#capitulo5">Capítulo 5: Título del Capítulo 5</a>
+            <a href="#capitulo6">Capítulo 6: Título del Capítulo 6</a>
+            <a href="#capitulo7">Capítulo 7: Título del Capítulo 7</a>
+            <a href="#capitulo8">Capítulo 8: Título del Capítulo 8</a>
+            <a href="#capitulo9">Capítulo 9: Título del Capítulo 9</a>
+        </section>
 
-        <!-- Capítulo 1 -->
+        <!-- Capítulos -->
         <section id="capitulo1">
-            <h2>Capítulo 1: El Comienzo</h2>
+            <h2>Capítulo 1: Título del Capítulo 1</h2>
             <div class="image-container">
-                <img src="https://via.placeholder.com/1920x389" alt="Portada del Capítulo 1">
+                <img src="url-de-la-portada-capitulo1.jpg" alt="Portada Capítulo 1">
             </div>
-            <div class="chapter-content">
-                <p>Este es el primer capítulo de la novela. Aquí es donde puedes comenzar a narrar la historia.</p>
-            </div>
+            <p>Contenido del Capítulo 1...</p>
         </section>
 
-        <!-- Capítulo 2 -->
         <section id="capitulo2">
-            <h2>Capítulo 2: Un Nuevo Horizonte</h2>
+            <h2>Capítulo 2: Título del Capítulo 2</h2>
             <div class="image-container">
-                <img src="https://via.placeholder.com/1920x389" alt="Portada del Capítulo 2">
+                <img src="url-de-la-portada-capitulo2.jpg" alt="Portada Capítulo 2">
             </div>
-            <div class="chapter-content">
-                <p>Este es el segundo capítulo de la novela.</p>
-            </div>
+            <p>Contenido del Capítulo 2...</p>
         </section>
 
-        <!-- Capítulo 3 -->
-        <section id="capitulo3">
-            <h2>Capítulo 3: La Aventura Continúa</h2>
-            <div class="image-container">
-                <img src="https://via.placeholder.com/1920x389" alt="Portada del Capítulo 3">
-            </div>
-            <div class="chapter-content">
-                <p>Este es el tercer capítulo de la novela.</p>
-            </div>
-        </section>
+        <!-- Añade secciones similares para los capítulos 3 a 9 aquí -->
 
-        <!-- Capítulo 4 -->
-        <section id="capitulo4">
-            <h2>Capítulo 4: Descubrimientos</h2>
-            <div class="image-container">
-                <img src="https://via.placeholder.com/1920x389" alt="Portada del Capítulo 4">
-            </div>
-            <div class="chapter-content">
-                <p>Este es el cuarto capítulo. Aquí es donde los personajes comienzan a hacer descubrimientos importantes.</p>
-            </div>
-        </section>
-
-        <!-- Capítulo 5 -->
-        <section id="capitulo5">
-            <h2>Capítulo 5: Dudas y Decisiones</h2>
-            <div class="image-container">
-                <img src="https://via.placeholder.com/1920x389" alt="Portada del Capítulo 5">
-            </div>
-            <div class="chapter-content">
-                <p>Este es el quinto capítulo. Las decisiones comienzan a pesar sobre los personajes.</p>
-            </div>
-        </section>
-
-        <!-- Capítulo 6 -->
-        <section id="capitulo6">
-            <h2>Capítulo 6: La Gran Encrucijada</h2>
-            <div class="image-container">
-                <img src="https://via.placeholder.com/1920x389" alt="Portada del Capítulo 6">
-            </div>
-            <div class="chapter-content">
-                <p>Este es el sexto capítulo. Un momento clave en la trama se desarrolla aquí.</p>
-            </div>
-        </section>
-
-        <!-- Capítulo 7 -->
-        <section id="capitulo7">
-            <h2>Capítulo 7: Revelaciones</h2>
-            <div class="image-container">
-                <img src="https://via.placeholder.com/1920x389" alt="Portada del Capítulo 7">
-            </div>
-            <div class="chapter-content">
-                <p>Este es el séptimo capítulo. La historia continúa su desarrollo.</p>
-            </div>
-        </section>
-
-        <!-- Capítulo 8 -->
-        <section id="capitulo8">
-            <h2>Capítulo 8: Decisiones Críticas</h2>
-            <div class="image-container">
-                <img src="https://via.placeholder.com/1920x389" alt="Portada del Capítulo 8">
-            </div>
-            <div class="chapter-content">
-                <p>Este es el octavo capítulo. El clímax de la historia está cerca.</p>
-            </div>
-        </section>
-
-        <!-- Capítulo 9 -->
-        <section id="capitulo9">
-            <h2>Capítulo 9: El Final del Camino</h2>
-            <div class="image-container">
-                <img src="https://via.placeholder.com/1920x389" alt="Portada del Capítulo 9">
-            </div>
-            <div class="chapter-content">
-                <p>Este es el noveno y último capítulo de la novela (por ahora).</p>
-            </div>
+        <!-- Sección de publicaciones del editor -->
+        <section class="editor-publications">
+            <h2>Publicaciones del Editor</h2>
+            <article>
+                <h3>Título de la Publicación del Editor</h3>
+                <p>Contenido de la publicación del editor...</p>
+            </article>
         </section>
 
         <!-- Sección de Feedback -->
-        <div class="feedback-section">
-            <h3>Comentarios y Feedback</h3>
-            <form action="submit_feedback.html" method="POST">
-                <textarea name="feedback" rows="5" placeholder="Escribe tu comentario o feedback aquí..."></textarea>
+        <section class="feedback-section">
+            <h3>Déjanos tu Feedback</h3>
+            <form id="feedbackForm">
+                <textarea id="feedbackInput" rows="5" placeholder="Escribe tu comentario o feedback aquí..."></textarea>
                 <input type="submit" value="Enviar Feedback">
             </form>
-        </div>
+        </section>
 
         <!-- Sección de Comentarios -->
-        <div class="comment-section">
-            <h4>Últimos comentarios</h4>
-            <div class="comment">
-                <p class="comment-author">Usuario1</p>
-                <p class="comment-date">Publicado el 14 de Septiembre, 2024</p>
-                <p>¡Me encanta la historia hasta ahora! ¡Esperando el próximo capítulo!</p>
-            </div>
-            <div class="comment">
-                <p class="comment-author">Usuario2</p>
-                <p class="comment-date">Publicado el 13 de Septiembre, 2024</p>
-                <p>El giro en el capítulo 6 fue sorprendente. Buen trabajo.</p>
-            </div>
-        </div>
-
-        <!-- Footer -->
-        <footer>
-            <p>© 2024 Tu Nombre - Todos los derechos reservados</p>
-        </footer>
+        <section class="comment-section">
+            <h4>Comentarios</h4>
+            <div id="commentsContainer"></div>
+        </section>
     </div>
+
+    <footer>
+        <p>&copy; 2024 Tu Nombre. Todos los derechos reservados.</p>
+    </footer>
 </body>
 </html>
-
