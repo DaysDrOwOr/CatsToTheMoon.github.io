@@ -3,125 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CATS TO THE MOON - Novela</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Mi Novela</title>
     <style>
         body {
             font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #000000, #6a0d91);
+            color: #ffffff;
             margin: 0;
             padding: 0;
-            background: linear-gradient(black, purple);
-            color: #f5f5f5;
-        }
-        header {
-            background-color: #222;
-            color: #f5f5f5;
-            padding: 10px 0;
-            text-align: center;
         }
         .container {
             width: 80%;
-            margin: 0 auto;
+            margin: auto;
             padding: 20px;
         }
-        .intro {
+        h1 {
             text-align: center;
-            margin-bottom: 30px;
-            font-size: 1.2rem;
         }
         .index {
-            margin-bottom: 30px;
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .index ul {
+            list-style: none;
+            padding: 0;
+        }
+        .index li {
+            margin: 10px 0;
         }
         .index a {
+            color: #ffffff;
             text-decoration: none;
-            color: #f5f5f5;
-            font-size: 1.2rem;
         }
         .index a:hover {
             text-decoration: underline;
         }
         .chapter-header {
-            font-size: 2rem;
-            margin: 30px 0 10px;
+            font-size: 1.5em;
+            margin-top: 20px;
+            position: relative;
             text-align: center;
+            color: #ffffff;
         }
         .chapter-image {
             width: 100%;
-            max-width: 1920px;
-            height: 389px;
+            max-height: 200px;
             object-fit: cover;
             display: block;
-            margin: 0 auto;
+            margin: 10px auto;
         }
         .chapter-content {
-            margin-top: 20px;
-            line-height: 1.6;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 5px;
         }
-        .feedback-section {
+        .feedback-section, .comments-section {
             margin-top: 40px;
-        }
-        .feedback-form, .comments-section {
-            margin-bottom: 20px;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 5px;
         }
         .feedback-form input, .feedback-form textarea {
             width: 100%;
-            padding: 10px;
             margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
+            padding: 10px;
+            border: 1px solid #ffffff;
+            border-radius: 5px;
+            background-color: #333333;
+            color: #ffffff;
         }
         .feedback-form button {
-            padding: 10px 20px;
+            background-color: #6a0d91;
+            color: #ffffff;
+            padding: 10px;
             border: none;
-            background-color: #333;
-            color: #f5f5f5;
-            border-radius: 4px;
+            border-radius: 5px;
             cursor: pointer;
         }
         .feedback-form button:hover {
-            background-color: #555;
+            background-color: #5c0096;
         }
-        .comment {
-            padding: 10px;
-            border-bottom: 1px solid #ccc;
-        }
-        .comment-text {
-            font-size: 1rem;
-        }
-        .comment-date {
-            font-size: 0.8rem;
-            color: #aaa;
+        .comments-section h2 {
+            margin-top: 0;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>CATS TO THE MOON</h1>
-    </header>
     <div class="container">
-        <div class="intro">
-            <p>Bienvenido a "CATS TO THE MOON". Aquí podrás leer los capítulos de nuestra novela y dejar tu feedback. ¡Esperamos que disfrutes la lectura!</p>
-        </div>
+        <h1>Mi Novela</h1>
+
+        <!-- Índice -->
         <div class="index">
             <h2>Índice</h2>
             <ul>
-                <li><a href="#chapter1">Capítulo 1</a></li>
-                <li><a href="#chapter2">Capítulo 2</a></li>
-                <li><a href="#chapter3">Capítulo 3</a></li>
-                <li><a href="#chapter4">Capítulo 4</a></li>
-                <li><a href="#chapter5">Capítulo 5</a></li>
-                <li><a href="#chapter6">Capítulo 6</a></li>
-                <li><a href="#chapter7">Capítulo 7</a></li>
-                <li><a href="#chapter8">Capítulo 8</a></li>
-                <li><a href="#chapter9">Capítulo 9</a></li>
+                <li><a href="#chapter1">Capítulo 1 - Trinidad</a></li>
+                <li><a href="#chapter2">Capítulo 2 - Análisis de las Sectas del pasado</a></li>
+                <!-- Agrega más capítulos aquí -->
             </ul>
+        </div>
+
+        <!-- Introducción -->
+        <div class="introduction">
+            <h2>Introducción</h2>
+            <p>Bienvenidos a mi novela. En esta historia exploraremos un mundo lleno de intriga y emociones intensas. Cada capítulo está diseñado para sumergirte en una experiencia única, así que prepárate para un viaje emocionante.</p>
         </div>
 
         <!-- Capítulo 1 -->
         <div id="chapter1">
-            <h2 class="chapter-header">Capítulo 1 - Enero de 1979 - Plaza Mayor de New Holland</h2>
+            <h2 class="chapter-header">Capítulo 1 - Trinidad</h2>
             <img src="images/chapter1-cover.jpg" alt="Portada del Capítulo 1" class="chapter-image">
             <div class="chapter-content">
+                <p>Enero de 1979 - Plaza Mayor de New Holland</p>
                 <p>---------17:15</p>
                 <p>Mientras miro a la cúpula, esta vez iluminada de un precioso azul pastel, le doy una calada más a mi cigarro...</p>
                 <p>Vuelvo de sí y me encuentro sentado en un banco de madera, en medio de una gran plazoleta donde los niños juegan, la gente habla de sus quehaceres, y el precioso estilo vintage de las tiendas me hace pensar en el provivalente desarrollo de la sociedad</p>
@@ -178,152 +171,29 @@
                 <p>Y el sombrero lo compré en una de las mejores tiendas de la zona con el dinero que había conseguido</p>
                 <p>Nada más y nada menos que a Echo la Confeccionadora</p>
                 <p>Tenía una técnica que hacía que cada punzada fuera mejor que la anterior y más valiosa</p>
-                <p>Como toque final añadió un lacito fino de color verde esmeralda, que iba a juego con el color de mis ojos</p>
-                <p>Aun pensaba en lo que hice, a veces soñaba con ello incluso</p>
-                <p>Me preguntaba si esto era el producto de años de remordimientos</p>
-                <p>Pero ya había metido la pala en la tierra</p>
-                <p>Y por todo mi orgullo pensé que seguiría cavando este hoyo</p>
-                <p>Pero...</p>
-                <p>Había un solo sitio donde podía pasar desapercibido</p>
-                <p>Un bar de mala muerte a las afueras de New Holland</p>
-                <p>Casi nadie venía a aquel lugar para tomar copas o charlar así que era un lugar seguro para mí</p>
-                <p>Uno de estos días, entré despreocupado como de costumbre, y me senté en la barra...</p>
-                <p>-Kick: Buenas Whisky</p>
-                <p>-Whisky: Kick...</p>
-                <p>Te pongo lo de siempre cariño?</p>
-                <p>-Kick: Si...</p>
-                <p>(Dejé el sombrero y la gabardina en mi silla)</p>
-                <p>Whisky, una ratona ya mayor, con unas pintas desaliñadas y una ropa ciertamente provocativa, venía con una cerveza grande que dejó en la mesa, ella directamente se puso a recoger cosas detrás de la barra</p>
-                <p>Mientras se escuchaban los estridentes sonidos de la cubertería yo bebía a paso ligero, no pretendía quedarme ahí mucho tiempo</p>
-                <p>Bebía y bebía...</p>
-                <p>De pronto...</p>
-                <p>*Cling</p>
-                <p>Entró una pequeña coneja con unos ojos grandes color ámbar, una camisa, unos pantalones de trabajo y unas trenzas rubias</p>
-                <p>Me llamó la atención ya que no es algo común ver a una coneja libre en estos lugares de la ciudad</p>
-                <p>Se sentó a dos asientos a la izquierda y llamó a Whisky</p>
-                <p>Ella salió a paso ligero del almacén y al verla, volvió a caminar como de costumbre</p>
-                <p>Se acercó a ella y se sentó al otro lado del mostrador...</p>
-                <p>Directamente le dijo...</p>
-                <p>-Whisky: Cielo, tuviste suerte?</p>
-                <p>Ella se quedó callada</p>
-                <p>Whisky extiende su mano a la suya y la acaricia, de seguido dice</p>
-                <p>-Whisky: La vida será lo perra que quiera pero no pienses que se acabó cariño</p>
-                <p>Nunca se acabará... si yo salí de mi agujero tú puedes salir de el tuyo</p>
-                <p>-Whisky: Por el momento, alegra esa cara, vale?</p>
-                <p>(Sacó una botella de detrás de la barra y le sirvió un chupito)</p>
-                <p>La coneja se queda mirando aquella bebida que rebosaba de un líquido rojizo y brillante</p>
-                <p>(Whisky se mostraba preocupada)</p>
-                <p>-Whisky: Hiciste todo lo que podías hacer pequeña?</p>
-                <p>-Coneja: Eso creo...</p>
-                <p>-Coneja: Rebusqué en los contenedores, mendigué en farmacias y busqué en hospitales, no encontré nada...</p>
-                <p>(Después de contárselo, agarró el chupito y se lo bebió de un trago, con un golpecito moderado lo dejó de vuelta en la barra)</p>
-                <p>(Whisky se sentó detrás de la barra y cruzó los brazos...)</p>
-                <p>-Whisky: Ella estará bien, te lo prometo...</p>
-                <p>(La coneja, miró a los ojos a Whisky y sonrió levemente)</p>
-                <p>...</p>
-                <p>La cerveza que tenía en la mano ya estaba caliente</p>
-                <p>(La miró con cierto desagrado y la terminó)</p>
-                <p>(Doy un suspiro pesado y me giro hacia la coneja)</p>
-                <p>-Kick: Yo también necesito cobrar...</p>
-                <p>(Whisky me mira a los ojos con una expresión confusa)</p>
-                <p>-Coneja: Perdona, no me interesa cooperar con ladrones...</p>
-                <p>Pero realmente necesito ese dinero, así que supongo que no tengo muchas opciones</p>
-                <p>(Siento un malestar en el pecho, el ambiente está cargado de angustia)</p>
-                <p>-Whisky: Podría funcionaros...</p>
-                <p>(La coneja me mira a los ojos y yo a los suyos, en medio de el pesado ambiente...)</p>
-                <p>Y se hace un silencio atronador</p>
-                <p>De repente...</p>
-                <p>*¡BLAM!</p>
-                <p>-Zorro desconocido: WHISKY, AMIGA MÍA</p>
-                <p>Él era un zorro, que vestía con un viejo traje de cuadros, sus ojos eran de un color amarillo oscuro, todo su pelaje naranja se veía revuelto y descuidado...</p>
-                <p>(En el desorden de esa escena, se acerca a la barra a pasos agigantados y clava sus dos codos delante de nosotros)</p>
-                <p>-Zorro desconocido: Que se cuece por aquí! EH!? , parece un entierro!</p>
-                <p>Todo sentimiento de que había un tipo de ambiente establecido se rompe en mil pedazos</p>
-                <p>Nadie dice nada</p>
-                <p>-Zorro: Ohhhh, erm...</p>
-                <p>(Whisky saca un paquete de tabaco de debajo de la barra)</p>
-                <p>-Whisky: Van de sustento de puta</p>
-                <p>(Acto seguido, ella saca un cigarro y lo enciende)</p>
-                <p>-Whisky: Necesitan dinero rápido, así que tal vez requieran ayuda extra</p>
-                <p>Tom, si les echas una mano no tendrías que depender tanto del sustento del bar...</p>
-                <p>Son delincuentes, es lo que ellos tienen</p>
-                <p>Que tienes tú...?</p>
-                <p>(La mirada de Whisky, detrás de sus grandes ojeras y expresión de dolor, expresa calidez de alguna forma)</p>
-                <p>Como una madre</p>
-                <p>Y aquí empezó nuestra pequeña historia</p>
-                <p>Con un trato</p>
-                <p>Cuando consigamos lo necesario partiremos caminos diferentes, dijo Petra</p>
-                <p>Todos asentimos con la cabeza</p>
-                <p>...</p>
-                <p>Parecía un sueño</p>
-                <p>Hacerse rico y retirarse</p>
-                <p>Bueno, más o menos</p>
-                <p>Tiene sus altibajos...</p>
-                <p>--------Dos semanas después</p>
-                <p>Era una noche más en el descuidado bar de Whisky...</p>
-                <p>-Kick: Tom, Petra, ¿cómo va el asunto de las armas?</p>
-                <p>-Petra: Conseguimos el paquete y no nos siguieron</p>
-                <p>(Giro la cabeza para mirar a Tom por un momento)</p>
-                <p>(Tom hace una mueca desagradable hacia mí y dice)</p>
-                <p>-Tom: Siguen vivos</p>
-                <p>-Kick: Vale..., vayamos a la mesa de el fondo</p>
-                <p>(Nos acercamos a esta gran mesa circular, nos sentamos y acto seguido sacamos 3 bolsas de plástico)</p>
-                <p>Una tenía una pistola Makarova</p>
-                <p>La otra contenía una Colt 1911</p>
-                <p>Y la última, un revolver Orbea Cal.44</p>
-                <p>-Kick: (En voz alta) Que sepáis todos que esto solo significa una mejora de nuestro trabajo y profesionalidad, no queremos víctimas innecesarias.</p>
-                <p>Ya era costumbre tener un ambiente cargado de trabajo, pero antes solía rondar cierto aire despreocupado, esta vez todos sabíamos donde nos estábamos metiendo</p>
-                <p>Y ojalá hubiera sido tan cierto</p>
-                <p>-Kick: Vale, tenemos que aprender a utilizarlas, tenemos dos semiautomáticas y un revolver, de todas formas</p>
-                <p>(Comenzamos a estudiar cómo funcionan y los métodos de uso)</p>
-                <p>(Era evidente que la situación sería complicada)</p>
-                <p>Recuerdo la primera vez que enfrenté mi miedo...</p>
-                <p>¡No había forma de escaparse!</p>
-                <p>...</p>
-                <p>Era cuestión de tiempo</p>
-                <p>La verdad es que aún cuando pensaba en eso estaba seguro que llegaríamos lejos...</p>
-                <p>Hasta que la situación me dio otro golpe</p>
-                <p>Una situación en la que el miedo, el valor y el sacrificio estaban más cerca de lo que pensaba</p>
-                <p>Y con el paso del tiempo me di cuenta</p>
-                <p>Que me había convertido en parte de ese mundo...</p>
-                <p>El de los ladrones...</p>
-                <p>Un mundo que al final nunca conocí...</p>
-                <p>Y nunca imaginé que me enfrentaría a cosas que no podría controlar</p>
-                <p>Era una vorágine que no conocía...</p>
-                <p>Hasta ahora...</p>
-                <p>Pero lo peor fue no poder parar</p>
-                <p>Si bien es cierto que la vida siempre se encarga de jugar con nosotros...</p>
-                <p>Había tomado una decisión</p>
-                <p>Y era la peor decisión que podría haber tomado</p>
+                <p>Como toque final añadió un lacito que hacía que el sombrero luciera más exclusivo que cualquier otro</p>
+                <p>Y en cada rincón de la tienda brillaba la perfección y elegancia</p>
             </div>
         </div>
 
-        <!-- Capítulo 2 -->
-        <div id="chapter2">
-            <h2 class="chapter-header">Capítulo 2 - Análisis de las Sectas del pasado</h2>
-            <img src="images/chapter2-cover.jpg" alt="Portada del Capítulo 2" class="chapter-image">
-            <div class="chapter-content">
-                <p>Para entender el presente, necesitamos explorar el pasado...</p>
-                <!-- Aquí continúa el contenido del Capítulo 2 -->
-            </div>
-        </div>
-
-        <!-- Formulario de feedback -->
+        <!-- Sección de Feedback -->
         <div class="feedback-section">
             <h2>Deja tu Feedback</h2>
-            <form action="https://formspree.io/f/xyzgadzz" method="POST" class="feedback-form">
+            <form class="feedback-form" action="https://formspree.io/f/xyzgadzz" method="post">
                 <input type="text" name="name" placeholder="Tu nombre" required>
                 <input type="email" name="email" placeholder="Tu email" required>
-                <textarea name="message" rows="5" placeholder="Tu comentario" required></textarea>
+                <textarea name="message" rows="5" placeholder="Tu mensaje" required></textarea>
                 <button type="submit">Enviar</button>
             </form>
         </div>
 
-        <!-- Sección de comentarios -->
+        <!-- Sección de Comentarios -->
         <div class="comments-section">
             <h2>Comentarios</h2>
-            <!-- Aquí se pueden agregar los comentarios dinámicamente desde Firebase -->
+            <p>¡Deja tus comentarios sobre este capítulo!</p>
+            <!-- Aquí puedes agregar un widget o script para comentarios si lo deseas -->
         </div>
     </div>
 </body>
 </html>
+
