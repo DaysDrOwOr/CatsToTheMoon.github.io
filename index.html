@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Novela en línea">
     <meta name="author" content="Tu Nombre">
-    <title>Mi Novela - Título del Capítulo</title>
+    <title>Mi Novela</title>
     <style>
         body {
             font-family: 'Georgia', serif;
-            background-color: #f0f0f0;
+            background-color: #f5f5f5;
             margin: 0;
             padding: 0;
         }
         .container {
             width: 85%;
-            max-width: 800px;
+            max-width: 900px;
             margin: 40px auto;
             padding: 20px;
             background-color: #fff;
@@ -24,27 +24,40 @@
         }
         header {
             text-align: center;
-            padding: 20px;
+            padding: 40px 0;
             background-color: #333;
             color: white;
-            border-radius: 8px 8px 0 0;
         }
         header h1 {
-            margin: 0;
-            font-size: 2.5em;
+            font-size: 3em;
             font-family: 'Times New Roman', serif;
+            margin: 0;
+        }
+        nav {
+            margin: 20px 0;
+            text-align: center;
+        }
+        nav a {
+            margin: 0 15px;
+            font-size: 1.2em;
+            color: #333;
+            text-decoration: none;
+        }
+        nav a:hover {
+            text-decoration: underline;
         }
         section {
-            margin-top: 20px;
+            margin-top: 40px;
         }
         h2 {
+            font-size: 2em;
             color: #444;
             border-bottom: 2px solid #ddd;
             padding-bottom: 10px;
-            font-size: 1.8em;
             margin-bottom: 20px;
+            text-align: center;
         }
-        .chapter {
+        .chapter-content {
             font-size: 1.2em;
             line-height: 1.8em;
             color: #333;
@@ -69,55 +82,141 @@
             font-size: 0.9em;
             border-radius: 0 0 8px 8px;
         }
-        .subsection {
-            margin-top: 30px;
-            font-size: 1.4em;
+        .feedback-section {
+            margin-top: 50px;
+            padding: 30px;
+            background-color: #eee;
+            border-radius: 8px;
         }
-        .subsection h3 {
-            color: #666;
-            margin-bottom: 10px;
+        .feedback-section h3 {
+            margin-bottom: 20px;
+            color: #444;
+            font-size: 1.5em;
+        }
+        .feedback-section form {
+            display: flex;
+            flex-direction: column;
+        }
+        .feedback-section form textarea {
+            padding: 10px;
+            margin-bottom: 15px;
+            font-size: 1em;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            resize: vertical;
+        }
+        .feedback-section form input[type="submit"] {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            font-size: 1.1em;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        .feedback-section form input[type="submit"]:hover {
+            background-color: #555;
+        }
+        .comment-section {
+            margin-top: 40px;
+        }
+        .comment-section h4 {
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 1.3em;
+        }
+        .comment {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .comment-author {
+            font-weight: bold;
+        }
+        .comment-date {
+            font-size: 0.9em;
+            color: #777;
         }
     </style>
 </head>
 <body>
     <div class="container">
+        <!-- Header principal -->
         <header>
-            <h1>Mi Novela</h1>
+            <h1>Mi Novela: CATS TO THE MOON</h1>
             <p>Autor: <strong>Tu Nombre</strong></p>
         </header>
 
-        <section>
-            <h2>Título del Capítulo 1</h2>
-            <div class="chapter">
-                <p>Aquí puedes comenzar a escribir tu historia. Cada párrafo puede ser una pieza de tu novela. Escribe lo que desees, y simplemente copia y pega nuevos párrafos en esta sección para expandir el capítulo.</p>
-                <p>Si quieres añadir más capítulos, puedes duplicar esta estructura para crear nuevos capítulos fácilmente.</p>
-            </div>
-            
-            <!-- Ejemplo de imagen -->
+        <!-- Índice de capítulos -->
+        <nav>
+            <a href="#capitulo1">Capítulo 1</a>
+            <a href="#capitulo2">Capítulo 2</a>
+            <a href="#capitulo3">Capítulo 3</a>
+            <!-- Agrega más capítulos aquí -->
+        </nav>
+
+        <!-- Capítulo 1 -->
+        <section id="capitulo1">
+            <h2>Capítulo 1: El Comienzo</h2>
+
+            <!-- Portada del capítulo -->
             <div class="image-container">
-                <img src="https://via.placeholder.com/800x400" alt="Descripción de la imagen">
-                <p><em>Imagen descriptiva del capítulo o novela (puedes cambiarla).</em></p>
+                <img src="https://via.placeholder.com/800x400" alt="Portada del Capítulo 1">
             </div>
 
-            <!-- Subapartado dentro del capítulo -->
-            <div class="subsection">
-                <h3>Subtítulo del Capítulo</h3>
-                <p>Este es un subapartado dentro del capítulo. Aquí puedes crear una nueva sección de la historia para profundizar en eventos o personajes, agregando un poco de variedad visual a la página.</p>
-            </div>
-        </section>
-
-        <!-- Agregar más capítulos duplicando esta sección -->
-        <section>
-            <h2>Título del Capítulo 2</h2>
-            <div class="chapter">
-                <p>Este es el inicio de otro capítulo. Puedes organizar tus capítulos de forma similar, con su propio título, párrafos e imágenes si lo deseas.</p>
+            <!-- Contenido del capítulo -->
+            <div class="chapter-content">
+                <p>Este es el primer capítulo de la novela. Aquí es donde puedes comenzar a narrar la historia. Este espacio está diseñado para ser el cuerpo principal del capítulo.</p>
+                <p>Añade más texto según sea necesario. También puedes hacer ajustes de estilo para dar diferentes énfasis a cada sección de la narrativa.</p>
             </div>
         </section>
 
+        <!-- Capítulo 2 -->
+        <section id="capitulo2">
+            <h2>Capítulo 2: Un Nuevo Horizonte</h2>
+
+            <!-- Portada del capítulo -->
+            <div class="image-container">
+                <img src="https://via.placeholder.com/800x400" alt="Portada del Capítulo 2">
+            </div>
+
+            <!-- Contenido del capítulo -->
+            <div class="chapter-content">
+                <p>Este es el segundo capítulo de la novela. Aquí puedes continuar con la historia, desarrollando los personajes y la trama.</p>
+            </div>
+        </section>
+
+        <!-- Feedback y Comentarios -->
+        <div class="feedback-section">
+            <h3>Deja tu feedback</h3>
+            <form action="#">
+                <textarea rows="5" placeholder="Escribe tus comentarios aquí..."></textarea>
+                <input type="submit" value="Enviar Comentario">
+            </form>
+
+            <!-- Sección de comentarios -->
+            <div class="comment-section">
+                <h4>Comentarios recientes:</h4>
+                
+                <!-- Ejemplo de comentario -->
+                <div class="comment">
+                    <p class="comment-author">Juan Pérez</p>
+                    <p class="comment-date">14 de Septiembre de 2024</p>
+                    <p>¡Me encanta el comienzo de la novela! Los personajes parecen muy interesantes.</p>
+                </div>
+
+                <!-- Agrega más comentarios aquí -->
+            </div>
+        </div>
+
+        <!-- Pie de página -->
         <footer>
             &copy; 2024 Tu Nombre - Todos los derechos reservados.
         </footer>
     </div>
 </body>
 </html>
+
 
