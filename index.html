@@ -195,74 +195,21 @@
                 const querySnapshot = await getDocs(q);
                 querySnapshot.forEach((doc) => {
                     const data = doc.data();
-                    const commentElement = document.createElement('div');
-                    commentElement.className = 'comment';
-                    commentElement.innerHTML = `
-                        <p class="comment-author">Usuario Anónimo</p>
-                        <p class="comment-date">${new Date(data.timestamp.toMillis()).toLocaleDateString()}</p>
-                        <p>${data.text}</p>
-                    `;
-                    commentsContainer.appendChild(commentElement);
+                    if (data && data.text && data.timestamp) {  // Chequeo para evitar undefined
+                        const commentElement = document.createElement('div');
+                        commentElement.className = 'comment';
+                        commentElement.innerHTML = `
+                            <p class="comment-author">Usuario Anónimo</p>
+                            <p class="comment-date">${new Date(data.timestamp.toMillis()).toLocaleDateString()}</p>
+                            <p>${data.text}</p>
+                        `;
+                        commentsContainer.appendChild(commentElement);
+                    }
                 });
             }
 
             loadComments();
         });
-    </script><script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
-    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-analytics.js";
-    import { getFirestore, collection, addDoc, getDocs, orderBy, query, serverTimestamp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore.js";
-
-    const firebaseConfig = {
-        apiKey: "AIzaSyDTzN6U7AHHjCUwK3eyRXSWWLWE3n15Ge0",
-        authDomain: "cttm-feedback-and-comments.firebaseapp.com",
-        projectId: "cttm-feedback-and-comments",
-        storageBucket: "cttm-feedback-and-comments.appspot.com",
-        messagingSenderId: "266179901021",
-        appId: "1:266179901021:web:6a97a958faefa47459ffb4",
-        measurementId: "G-6Q2XL76G8B"
-    };
-
-    const app = initializeApp(firebaseConfig);
-    const analytics = getAnalytics(app);
-    const db = getFirestore(app);
-
-    document.addEventListener('DOMContentLoaded', () => {
-        document.getElementById('feedbackForm').addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const feedback = document.getElementById('feedbackInput').value;
-            if (feedback.trim() !== '') {
-                await addDoc(collection(db, 'comments'), {
-                    text: feedback,
-                    timestamp: serverTimestamp()
-                });
-                document.getElementById('feedbackInput').value = '';
-                loadComments();
-            }
-        });
-
-        async function loadComments() {
-            const commentsContainer = document.getElementById('commentsContainer');
-            commentsContainer.innerHTML = '';
-            const q = query(collection(db, 'comments'), orderBy('timestamp', 'desc'));
-            const querySnapshot = await getDocs(q);
-            querySnapshot.forEach((doc) => {
-                const data = doc.data();
-                if (data && data.text && data.timestamp) {  // Chequeo para evitar undefined
-                    const commentElement = document.createElement('div');
-                    commentElement.className = 'comment';
-                    commentElement.innerHTML = `
-                        <p class="comment-author">Usuario Anónimo</p>
-                        <p class="comment-date">${new Date(data.timestamp.toMillis()).toLocaleDateString()}</p>
-                        <p>${data.text}</p>
-                    `;
-                    commentsContainer.appendChild(commentElement);
-                }
-            });
-        }
-
-        loadComments();
-    });
-</script>
+    </script>
 </body>
 </html>
