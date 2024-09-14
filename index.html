@@ -3,25 +3,158 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Novela en línea">
-    <meta name="author" content="Tu Nombre">
-    <title>Mi Novela</title>
+    <title>CATS TO THE MOON</title>
     <style>
-        body { font-family: Arial, sans-serif; background-color: #f0f0f0; color: #333; }
-        header { background-color: #333; color: #fff; padding: 10px; text-align: center; }
-        .container { max-width: 800px; margin: 0 auto; padding: 20px; background-color: #fff; }
-        .image-container img { width: 100%; height: auto; max-width: 1920px; max-height: 389px; }
-        .chapters { margin-top: 20px; }
-        .chapters a { display: block; margin: 10px 0; text-decoration: none; color: #333; font-weight: bold; }
-        .feedback-section, .comment-section { margin-top: 30px; }
-        textarea { width: 100%; padding: 10px; margin-bottom: 10px; }
-        input[type="submit"] { padding: 10px 15px; background-color: #333; color: #fff; border: none; cursor: pointer; }
-        .comment { background-color: #f9f9f9; padding: 15px; margin-bottom: 10px; border-radius: 5px; }
-        .comment-author { font-weight: bold; }
-        .comment-date { font-size: 0.8em; color: #666; }
-        .editor-publications { margin-top: 30px; }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        .container {
+            width: 90%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .chapter-index {
+            margin: 20px 0;
+            padding: 10px;
+        }
+        .chapter-index a {
+            display: block;
+            padding: 8px;
+            background-color: #f4f4f4;
+            margin-bottom: 5px;
+            text-decoration: none;
+            color: #333;
+        }
+        .chapter {
+            margin-bottom: 40px;
+        }
+        .chapter img {
+            width: 100%;
+            max-width: 1920px;
+            height: auto;
+        }
+        .feedback-section, .comments-section {
+            margin: 40px 0;
+        }
+        .comment {
+            background-color: #f4f4f4;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+        .comment-author {
+            font-weight: bold;
+        }
+        .comment-date {
+            font-size: 0.9em;
+            color: gray;
+        }
+        .form-container {
+            background-color: #f4f4f4;
+            padding: 20px;
+            border-radius: 5px;
+        }
     </style>
-    <!-- Importa Firebase SDKs -->
+</head>
+<body>
+
+    <header>
+        <h1>CATS TO THE MOON</h1>
+    </header>
+
+    <div class="container">
+        <!-- Índice de Capítulos -->
+        <section class="chapter-index">
+            <h2>Índice de Capítulos</h2>
+            <a href="#chapter1">Capítulo 1</a>
+            <a href="#chapter2">Capítulo 2</a>
+            <a href="#chapter3">Capítulo 3</a>
+            <a href="#chapter4">Capítulo 4</a>
+            <a href="#chapter5">Capítulo 5</a>
+            <a href="#chapter6">Capítulo 6</a>
+            <a href="#chapter7">Capítulo 7</a>
+            <a href="#chapter8">Capítulo 8</a>
+            <a href="#chapter9">Capítulo 9</a>
+        </section>
+
+        <!-- Capítulos -->
+        <section id="chapters">
+            <div id="chapter1" class="chapter">
+                <h2>Capítulo 1: El comienzo</h2>
+                <img src="portada1.jpg" alt="Portada Capítulo 1">
+                <p>Contenido del Capítulo 1...</p>
+            </div>
+            <div id="chapter2" class="chapter">
+                <h2>Capítulo 2: La misión</h2>
+                <img src="portada2.jpg" alt="Portada Capítulo 2">
+                <p>Contenido del Capítulo 2...</p>
+            </div>
+            <div id="chapter3" class="chapter">
+                <h2>Capítulo 3: La travesía</h2>
+                <img src="portada3.jpg" alt="Portada Capítulo 3">
+                <p>Contenido del Capítulo 3...</p>
+            </div>
+            <div id="chapter4" class="chapter">
+                <h2>Capítulo 4: El desafío</h2>
+                <img src="portada4.jpg" alt="Portada Capítulo 4">
+                <p>Contenido del Capítulo 4...</p>
+            </div>
+            <div id="chapter5" class="chapter">
+                <h2>Capítulo 5: La luna</h2>
+                <img src="portada5.jpg" alt="Portada Capítulo 5">
+                <p>Contenido del Capítulo 5...</p>
+            </div>
+            <div id="chapter6" class="chapter">
+                <h2>Capítulo 6: El ascenso</h2>
+                <img src="portada6.jpg" alt="Portada Capítulo 6">
+                <p>Contenido del Capítulo 6...</p>
+            </div>
+            <div id="chapter7" class="chapter">
+                <h2>Capítulo 7: La caída</h2>
+                <img src="portada7.jpg" alt="Portada Capítulo 7">
+                <p>Contenido del Capítulo 7...</p>
+            </div>
+            <div id="chapter8" class="chapter">
+                <h2>Capítulo 8: La redención</h2>
+                <img src="portada8.jpg" alt="Portada Capítulo 8">
+                <p>Contenido del Capítulo 8...</p>
+            </div>
+            <div id="chapter9" class="chapter">
+                <h2>Capítulo 9: El final</h2>
+                <img src="portada9.jpg" alt="Portada Capítulo 9">
+                <p>Contenido del Capítulo 9...</p>
+            </div>
+        </section>
+
+        <!-- Sección de Feedback -->
+        <section class="feedback-section">
+            <h2>Deja tu Feedback</h2>
+            <div class="form-container">
+                <form id="feedbackForm">
+                    <label for="feedbackInput">Tu comentario:</label>
+                    <textarea id="feedbackInput" rows="4" required></textarea>
+                    <button type="submit">Enviar Feedback</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Sección de Comentarios -->
+        <section class="comments-section">
+            <h2>Comentarios</h2>
+            <div id="commentsContainer"></div>
+        </section>
+
+    </div>
+
+    <!-- Firebase SDKs -->
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
         import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-analytics.js";
@@ -76,73 +209,5 @@
             loadComments();
         });
     </script>
-</head>
-<body>
-    <header>
-        <h1>Mi Novela</h1>
-    </header>
-
-    <div class="container">
-        <!-- Índice de capítulos -->
-        <section class="chapters">
-            <h2>Índice de Capítulos</h2>
-            <a href="#capitulo1">Capítulo 1: Título del Capítulo 1</a>
-            <a href="#capitulo2">Capítulo 2: Título del Capítulo 2</a>
-            <a href="#capitulo3">Capítulo 3: Título del Capítulo 3</a>
-            <a href="#capitulo4">Capítulo 4: Título del Capítulo 4</a>
-            <a href="#capitulo5">Capítulo 5: Título del Capítulo 5</a>
-            <a href="#capitulo6">Capítulo 6: Título del Capítulo 6</a>
-            <a href="#capitulo7">Capítulo 7: Título del Capítulo 7</a>
-            <a href="#capitulo8">Capítulo 8: Título del Capítulo 8</a>
-            <a href="#capitulo9">Capítulo 9: Título del Capítulo 9</a>
-        </section>
-
-        <!-- Capítulos -->
-        <section id="capitulo1">
-            <h2>Capítulo 1: Título del Capítulo 1</h2>
-            <div class="image-container">
-                <img src="url-de-la-portada-capitulo1.jpg" alt="Portada Capítulo 1">
-            </div>
-            <p>Contenido del Capítulo 1...</p>
-        </section>
-
-        <section id="capitulo2">
-            <h2>Capítulo 2: Título del Capítulo 2</h2>
-            <div class="image-container">
-                <img src="url-de-la-portada-capitulo2.jpg" alt="Portada Capítulo 2">
-            </div>
-            <p>Contenido del Capítulo 2...</p>
-        </section>
-
-        <!-- Añade secciones similares para los capítulos 3 a 9 aquí -->
-
-        <!-- Sección de publicaciones del editor -->
-        <section class="editor-publications">
-            <h2>Publicaciones del Editor</h2>
-            <article>
-                <h3>Título de la Publicación del Editor</h3>
-                <p>Contenido de la publicación del editor...</p>
-            </article>
-        </section>
-
-        <!-- Sección de Feedback -->
-        <section class="feedback-section">
-            <h3>Déjanos tu Feedback</h3>
-            <form id="feedbackForm">
-                <textarea id="feedbackInput" rows="5" placeholder="Escribe tu comentario o feedback aquí..."></textarea>
-                <input type="submit" value="Enviar Feedback">
-            </form>
-        </section>
-
-        <!-- Sección de Comentarios -->
-        <section class="comment-section">
-            <h4>Comentarios</h4>
-            <div id="commentsContainer"></div>
-        </section>
-    </div>
-
-    <footer>
-        <p>&copy; 2024 Tu Nombre. Todos los derechos reservados.</p>
-    </footer>
 </body>
 </html>
